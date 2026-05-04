@@ -392,6 +392,6 @@ script = ExtResource("1_f1ek2")
 shape = SubResource("RectangleShape2D_f60y1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=446678388]
-position = Vector2(4, -33)
+position = Vector2(13, -33)
 sprite_frames = SubResource("SpriteFrames_f60y1")
-animation = &"Walk"
+animation = &"Idle"
