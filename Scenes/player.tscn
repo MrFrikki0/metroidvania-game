@@ -328,7 +328,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8eeqe")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
 "speed": 7.0
 }, {
@@ -392,7 +392,6 @@ script = ExtResource("1_f1ek2")
 shape = SubResource("RectangleShape2D_f60y1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=446678388]
-position = Vector2(14, -34)
+position = Vector2(4, -33)
 sprite_frames = SubResource("SpriteFrames_f60y1")
-animation = &"Idle"
-frame_progress = 0.94778264
+animation = &"Walk"
