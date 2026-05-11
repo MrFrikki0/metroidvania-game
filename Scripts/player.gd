@@ -20,9 +20,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and JUMP_COUNT < 2:
 		velocity.y = JUMP_VELOCITY
 		JUMP_COUNT += 1
-		var air = "air %s"
-		var air1 = air % JUMP_COUNT
-		print(air1)
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

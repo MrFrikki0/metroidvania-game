@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bhwoh4xqxjmmw"]
+
+[ext_resource type="Texture2D" uid="uid://ct7rt8bno5ksq" path="res://Assets/Sprite/Items/test_item.png" id="1_0vv6o"]
+[ext_resource type="Script" uid="uid://buflp75rnqjck" path="res://Scripts/energy.gd" id="1_gr1ml"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gr1ml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0vv6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_401a5"]
+
+[node name="Energy" type="Area2D" unique_id=24894267]
+collision_mask = 2
+script = ExtResource("1_gr1ml")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=9072541]
+sprite_frames = SubResource("SpriteFrames_gr1ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1544075085]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_401a5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

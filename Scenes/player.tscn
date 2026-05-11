@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://nchkkvvohg75"]
 
-[ext_resource type="Texture2D" uid="uid://bq8wrdu3pmy7b" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Attack_1.png" id="1_8erm5"]
+[ext_resource type="Texture2D" uid="uid://bq8wrdu3pmy7b" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Attack_1.png" id="1_8erm5"]
 [ext_resource type="Script" uid="uid://b4ghbdpf5efx4" path="res://Scripts/player.gd" id="1_f1ek2"]
-[ext_resource type="Texture2D" uid="uid://dcuh13kptltgt" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Attack_2.png" id="2_f1ek2"]
-[ext_resource type="Texture2D" uid="uid://duox23xkxt03w" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Dead.png" id="3_tx1dd"]
-[ext_resource type="Texture2D" uid="uid://crijavex87k2p" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Hurt.png" id="4_gymyn"]
-[ext_resource type="Texture2D" uid="uid://yldbdp6uuuti" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Idle.png" id="5_pu2lt"]
-[ext_resource type="Texture2D" uid="uid://dwbroihpimp1c" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Jump.png" id="6_ukyrk"]
-[ext_resource type="Texture2D" uid="uid://dtha5dn5dg1gf" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Run.png" id="7_7dp3o"]
-[ext_resource type="Texture2D" uid="uid://bu8mdijfhl3vj" path="res://Assets/Sprite/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Walk.png" id="8_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://dcuh13kptltgt" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Attack_2.png" id="2_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://duox23xkxt03w" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Dead.png" id="3_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://crijavex87k2p" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Hurt.png" id="4_gymyn"]
+[ext_resource type="Texture2D" uid="uid://yldbdp6uuuti" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Idle.png" id="5_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://dwbroihpimp1c" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Jump.png" id="6_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://dtha5dn5dg1gf" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Run.png" id="7_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://bu8mdijfhl3vj" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Walk.png" id="8_h4iuc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f60y1"]
 size = Vector2(16, 60)
@@ -386,6 +386,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1434044922]
+collision_layer = 2
 script = ExtResource("1_f1ek2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271308583]
