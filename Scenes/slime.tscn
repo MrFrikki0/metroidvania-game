@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://t6c425p7nnqe"]
+
+[ext_resource type="Script" uid="uid://ddfjobps8jus5" path="res://Scenes/slime.gd" id="1_aiwxb"]
+[ext_resource type="Texture2D" uid="uid://co20451beohys" path="res://Assets/Sprite/Ememies/Enemy.png" id="1_swwnm"]
+[ext_resource type="PackedScene" uid="uid://gfrecmyaao4l" path="res://Scenes/kill_zone.tscn" id="2_aiwxb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_paq7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_swwnm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4si1"]
+radius = 7.5
+height = 22.0
+
+[node name="Slime" type="Node2D" unique_id=98664592]
+script = ExtResource("1_aiwxb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1288457367]
+sprite_frames = SubResource("SpriteFrames_paq7w")
+
+[node name="KillZone" parent="." unique_id=250391924 instance=ExtResource("2_aiwxb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1771031809]
+position = Vector2(0, 3.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_f4si1")
+
+[node name="RayCast right" type="RayCast2D" parent="." unique_id=1743625604]
+position = Vector2(0, 3)
+target_position = Vector2(22, 0)
+
+[node name="RayCast left" type="RayCast2D" parent="." unique_id=627782215]
+position = Vector2(0, 3)
+target_position = Vector2(-22, 0)

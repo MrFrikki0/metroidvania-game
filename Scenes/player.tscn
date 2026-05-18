@@ -47,27 +47,27 @@ region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
 atlas = ExtResource("3_tx1dd")
-region = Rect2(0, 0, 128, 128)
+region = Rect2(0, 0, 100, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1odr"]
 atlas = ExtResource("3_tx1dd")
-region = Rect2(128, 0, 128, 128)
+region = Rect2(128, 0, 100, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gysh"]
 atlas = ExtResource("3_tx1dd")
-region = Rect2(256, 0, 128, 128)
+region = Rect2(256, 0, 100, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfarp"]
 atlas = ExtResource("3_tx1dd")
-region = Rect2(384, 0, 128, 128)
+region = Rect2(384, 0, 100, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6uwr"]
 atlas = ExtResource("3_tx1dd")
-region = Rect2(512, 0, 128, 128)
+region = Rect2(512, 0, 100, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83xs0"]
 atlas = ExtResource("3_tx1dd")
-region = Rect2(640, 0, 128, 128)
+region = Rect2(640, 0, 100, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypfnu"]
 atlas = ExtResource("4_gymyn")
@@ -256,7 +256,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_83xs0")
 }],
-"loop": true,
+"loop": false,
 "name": &"Dead",
 "speed": 7.0
 }, {
@@ -397,6 +397,5 @@ shape = SubResource("RectangleShape2D_f60y1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=446678388]
 sprite_frames = SubResource("SpriteFrames_f60y1")
-animation = &"Idle"
-frame_progress = 0.3495855
+animation = &"Dead"
 offset = Vector2(0, -30)
