@@ -1,10 +1,12 @@
 [gd_scene format=4 uid="uid://q43lwpstirfi"]
 
 [ext_resource type="PackedScene" uid="uid://nchkkvvohg75" path="res://Scenes/player.tscn" id="1_3mqfk"]
+[ext_resource type="Script" uid="uid://bd8j1451814it" path="res://Scripts/game_manager.gd" id="1_xgxfi"]
 [ext_resource type="Texture2D" uid="uid://b320ejpbdt6on" path="res://Assets/Tilesets/craftpix-net-115897-free-exclusion-zone-tileset-pixel-art/Tileset.png" id="2_iixi8"]
 [ext_resource type="PackedScene" uid="uid://bhwoh4xqxjmmw" path="res://Scenes/energy.tscn" id="3_cyadu"]
 [ext_resource type="PackedScene" uid="uid://gfrecmyaao4l" path="res://Scenes/kill_zone.tscn" id="4_iixi8"]
 [ext_resource type="PackedScene" uid="uid://t6c425p7nnqe" path="res://Scenes/slime.tscn" id="5_cyadu"]
+[ext_resource type="PackedScene" uid="uid://tgvve4hadwf1" path="res://Scenes/ui.tscn" id="7_5f3p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfk5q"]
 texture = ExtResource("2_iixi8")
@@ -147,6 +149,10 @@ sources/1 = SubResource("TileSetAtlasSource_xfk5q")
 
 [node name="Level 1" type="Node2D" unique_id=1526965909]
 
+[node name="GameManager" type="Node" parent="." unique_id=2063193209]
+unique_name_in_owner = true
+script = ExtResource("1_xgxfi")
+
 [node name="map" type="TileMapLayer" parent="." unique_id=307670684]
 tile_map_data = PackedByteArray("AAD//wEAAQABAAAAAAAAAAEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAAAAAADAAEAAQACAAAAAAAEAAEAAQACAAAAAAAFAAEAAQADAAAAAAD+/wEAAQAAAAQAAAAFAAIAAQAAAAQAAAAGAAIAAQAFAAEAAAAHAAIAAQAFAAEAAAAIAAIAAQAHAAEAAAAGAAEAAQAEAAAAAAAHAAEAAQAFAAAAAAAIAAEAAQAGAAAAAAALAAIAAQAIAAAAAAAOAAIAAQAIAAAAAAALAAMAAQAIAAEAAAALAAQAAQAIAAEAAAAOAAMAAQAIAAEAAAAOAAQAAQAIAAEAAAAIAAMAAQADAAEAAAAIAAQAAQADAAEAAAARAAIAAQAAAAAAAAARAAMAAQAAAAEAAAARAAQAAQAAAAEAAAASAAIAAQABAAAAAAATAAIAAQABAAAAAAAUAAIAAQABAAAAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQADAAMAAAAYAAIAAQAFAAEAAAAZAAIAAQAFAAEAAAAaAAIAAQAFAAEAAAAbAAIAAQAFAAEAAAAcAAIAAQAFAAEAAAAdAAIAAQAFAAEAAAAeAAIAAQAFAAEAAAAfAAIAAQAFAAEAAAAgAAIAAQAFAAEAAAAeAAEAAQAFAAAAAAAfAAEAAQAFAAAAAAAgAAEAAQAFAAAAAAD+/wAAAQADAAEAAAD+////AQADAAEAAAD+//7/AQADAAEAAAD+//3/AQADAAEAAAD+//z/AQADAAEAAAAhAAIAAQABAAQAAAAhAAEAAQAAAAEAAAAhAAAAAQAAAAAAAAAiAAAAAQAFAAEAAAAjAAAAAQAFAAEAAAAkAAAAAQAFAAEAAAAiAP//AQAFAAAAAAAjAP//AQAGAAAAAAAkAP//AQAHAAAAAAAXAAEAAQAIAAAAAAAYAAEAAQAEAAAAAAAZAAEAAQAEAAAAAAAaAAEAAQAFAAAAAAAbAAEAAQAHAAAAAAAcAAEAAQAGAAAAAAAdAAEAAQAEAAAAAAA=")
 tile_set = SubResource("TileSet_7p6j4")
@@ -155,7 +161,9 @@ tile_set = SubResource("TileSet_7p6j4")
 position = Vector2(50, -2)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1563186697]
+zoom = Vector2(2, 2)
 limit_bottom = 150
+limit_smoothed = true
 
 [node name="Energy" parent="." unique_id=24894267 instance=ExtResource("3_cyadu")]
 position = Vector2(648, 26)
@@ -168,3 +176,7 @@ shape = SubResource("WorldBoundaryShape2D_cyadu")
 
 [node name="Slime" parent="." unique_id=98664592 instance=ExtResource("5_cyadu")]
 position = Vector2(804, 49)
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=695939449]
+
+[node name="UI" parent="GUI" unique_id=765963665 instance=ExtResource("7_5f3p6")]

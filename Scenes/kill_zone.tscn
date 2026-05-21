@@ -7,7 +7,6 @@ collision_mask = 2
 script = ExtResource("1_d6013")
 
 [node name="Timer" type="Timer" parent="." unique_id=833133783]
-wait_time = 0.6
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
