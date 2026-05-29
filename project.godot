@@ -16,6 +16,14 @@ run/main_scene="uid://q43lwpstirfi"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MetSys="*uid://c01ibpvrp2wsd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MetroidvaniaSystem/EditorExtension/plugin.cfg", "res://addons/MetroidvaniaSystem/plugin.cfg", "res://addons/anthonyec.camera_preview/plugin.cfg")
+
 [input]
 
 jump={

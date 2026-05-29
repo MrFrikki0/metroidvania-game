@@ -1,0 +1,8 @@
+[gd_resource type="Resource" format=3 uid="uid://c5tr8lq7si7sf"]
+
+[ext_resource type="Script" uid="uid://orxlanqpgccv" path="res://addons/MetroidvaniaSystem/Scripts/Settings.gd" id="1_ui0vk"]
+[ext_resource type="Resource" uid="uid://dtpk6t0nnpjb" path="res://addons/MetroidvaniaSystem/Themes/BS/Theme.tres" id="2_ui0vk"]
+
+[resource]
+script = ExtResource("1_ui0vk")
+theme = ExtResource("2_ui0vk")

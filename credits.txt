@@ -1,1 +1,22 @@
-Tilesets from craftpix.net
+Tilesets and player sprite from craftpix.net
+
+GhostTrail by indiegesindel
+https://store.godotengine.org/asset/indiegesindel/ghosttrail/
+
+App Settings by Kenyoni Software
+https://store.godotengine.org/asset/kenyoni/app-settings/
+
+Metroidvania System by KoBeWi
+https://store.godotengine.org/asset/kobewi/metroidvania-system/
+
+Little Camera Preview by Anthony Cossins
+https://store.godotengine.org/asset/anthonyec/little-camera-preview/
+
+SpringBody2D by proudpurple
+https://store.godotengine.org/asset/proudpurple/springbody2d/
+
+Scene Changer by Reiko's Studio
+https://store.godotengine.org/asset/zero-games/scene-changer/
+
+Admurins Freebies by Admurin
+https://store.godotengine.org/asset/admurin/admurins-freebies/
