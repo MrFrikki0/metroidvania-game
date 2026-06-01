@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cjnj34385tdfs"]
+
+[ext_resource type="Script" uid="uid://csvs34o5v0iho" path="res://Scripts/hitbox.gd" id="1_i7vqw"]
+
+[node name="Hitbox" type="Area2D" unique_id=2033086766]
+script = ExtResource("1_i7vqw")
+
+[node name="Timer" type="Timer" parent="." unique_id=138056691]
