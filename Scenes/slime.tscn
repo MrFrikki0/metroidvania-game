@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://co20451beohys" path="res://Assets/Sprite/Ememies/Enemy.png" id="1_swwnm"]
 [ext_resource type="PackedScene" uid="uid://gfrecmyaao4l" path="res://Scenes/kill_zone.tscn" id="2_aiwxb"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4si1"]
+radius = 7.5
+height = 22.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_paq7w"]
 animations = [{
 "frames": [{
@@ -15,27 +19,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4si1"]
-radius = 7.5
-height = 22.0
-
-[node name="Slime" type="Node2D" unique_id=98664592]
+[node name="slime" type="RigidBody2D" unique_id=347372849]
+collision_layer = 16
 script = ExtResource("1_aiwxb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1288457367]
-sprite_frames = SubResource("SpriteFrames_paq7w")
-
-[node name="KillZone" parent="." unique_id=250391924 instance=ExtResource("2_aiwxb")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1771031809]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=29701260]
 position = Vector2(0, 3.5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_f4si1")
 
-[node name="RayCast right" type="RayCast2D" parent="." unique_id=1743625604]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=801877248]
+sprite_frames = SubResource("SpriteFrames_paq7w")
+
+[node name="KillZone" parent="." unique_id=250391924 instance=ExtResource("2_aiwxb")]
+collision_layer = 16
+hit = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1892456398]
+position = Vector2(0, 3.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_f4si1")
+
+[node name="RayCast right" type="RayCast2D" parent="." unique_id=108296599]
 position = Vector2(0, 3)
 target_position = Vector2(22, 0)
 
-[node name="RayCast left" type="RayCast2D" parent="." unique_id=627782215]
+[node name="RayCast left" type="RayCast2D" parent="." unique_id=2121113475]
 position = Vector2(0, 3)
 target_position = Vector2(-22, 0)

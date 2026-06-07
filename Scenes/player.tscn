@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dwbroihpimp1c" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Jump.png" id="6_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://dtha5dn5dg1gf" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Run.png" id="7_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://bu8mdijfhl3vj" path="res://Assets/Sprite/Player/craftpix-net-529677-free-wizard-sprite-sheets-pixel-art/Fire Wizard/Walk.png" id="8_h4iuc"]
-[ext_resource type="PackedScene" uid="uid://cjnj34385tdfs" path="res://Scenes/hitbox.tscn" id="10_tx1dd"]
+[ext_resource type="PackedScene" uid="uid://gfrecmyaao4l" path="res://Scenes/kill_zone.tscn" id="10_tx1dd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f60y1"]
 size = Vector2(19, 62)
@@ -271,7 +271,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wohnl")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 7.0
 }, {
@@ -387,7 +387,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gymyn"]
-size = Vector2(64, 26)
+size = Vector2(62, 54)
 
 [node name="Player" type="CharacterBody2D" unique_id=1434044922]
 collision_layer = 2
@@ -401,12 +401,28 @@ shape = SubResource("RectangleShape2D_f60y1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=446678388]
 sprite_frames = SubResource("SpriteFrames_f60y1")
-animation = &"Idle"
+animation = &"Attack_2"
 offset = Vector2(0, -30)
 
-[node name="Hitbox" parent="." unique_id=2033086766 instance=ExtResource("10_tx1dd")]
-position = Vector2(29, 0)
-collision_mask = 2
+[node name="DeathTimer" type="Timer" parent="." unique_id=1062178462]
+wait_time = 0.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2140824738]
+[node name="Attack_1Timer" type="Timer" parent="." unique_id=156377835]
+wait_time = 0.5
+one_shot = true
+
+[node name="attack_1" type="Node2D" parent="." unique_id=1136470316]
+position = Vector2(32, 0)
+
+[node name="KillZone" parent="attack_1" unique_id=250391924 instance=ExtResource("10_tx1dd")]
+collision_layer = 2
+collision_mask = 16
+monitoring = false
+hit = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_1/KillZone" unique_id=1439816103]
 shape = SubResource("RectangleShape2D_gymyn")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
+[connection signal="timeout" from="Attack_1Timer" to="." method="_on_attack_1_timer_timeout"]

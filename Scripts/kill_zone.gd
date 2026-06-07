@@ -1,14 +1,12 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
+@export var hit: int
 
 func _on_body_entered(body: Node2D) -> void:
-	print("dead")
-	Engine.time_scale = 0.5
-	body.dead = true
-	timer.start()
-
-
-func _on_timer_timeout() -> void:
-	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	print(get_parent().get_name(), ": " , body.get_name())
+	if body.get_name() == "Player":
+		body.getting_hit(hit)
+	if body.get_name() == "Slime":
+		body.getting_hit(hit)
+		
