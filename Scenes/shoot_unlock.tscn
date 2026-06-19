@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://croskcw4flerl"]
+
+[ext_resource type="Script" uid="uid://cqxnpjy3yu6vj" path="res://Scripts/shoot_unlock.gd" id="1_rrhgb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tghti"]
+
+[node name="shoot_unlock" type="Area2D" unique_id=1502662490]
+script = ExtResource("1_rrhgb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2115540023]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84360126]
+shape = SubResource("RectangleShape2D_tghti")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

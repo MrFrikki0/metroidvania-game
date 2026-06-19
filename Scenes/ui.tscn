@@ -3,15 +3,35 @@
 [sub_resource type="LabelSettings" id="LabelSettings_xgxfi"]
 font_size = 25
 
+[sub_resource type="LabelSettings" id="LabelSettings_wviqb"]
+font_size = 23
+
 [node name="UI" type="Control" unique_id=765963665]
 layout_mode = 3
 anchors_preset = 0
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1688304693]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 82.0
+color = Color(0, 0, 0, 0.30588236)
+
 [node name="Energy" type="Label" parent="." unique_id=1812121167]
+modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 offset_left = 10.0
-offset_top = 10.0
-offset_right = 72.0
-offset_bottom = 33.0
+offset_top = 40.0
+offset_right = 106.0
+offset_bottom = 75.0
 text = "Energy: "
 label_settings = SubResource("LabelSettings_xgxfi")
+
+[node name="Health" type="Label" parent="." unique_id=793901077]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 42.0
+text = "Health:"
+label_settings = SubResource("LabelSettings_wviqb")
