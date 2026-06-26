@@ -5,8 +5,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var JUMP_COUNT: int = 0
 var health: int = 100
+var energy: int
 var dead: bool = false
 var max_jump: int = 1
+var max_energy: int = 5
 
 var jumping: bool
 var attacking: bool
@@ -134,7 +136,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		attacking = false
 		can_attack_1 = true
 		
-
+func add_energyPlayer():
+	energy += 1
 
 
 func _on_attack_2_timer_timeout() -> void:

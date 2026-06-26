@@ -62,7 +62,10 @@ attack_2={
 
 2d_physics/layer_1="environment"
 2d_physics/layer_2="player"
+2d_physics/layer_3="player_bullet"
+2d_physics/layer_4="pick_up"
 2d_physics/layer_5="enemy"
+2d_physics/layer_6="enemy_bullet"
 
 [physics]
 

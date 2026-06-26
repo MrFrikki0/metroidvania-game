@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://croskcw4flerl"]
 
 [ext_resource type="Script" uid="uid://cqxnpjy3yu6vj" path="res://Scripts/shoot_unlock.gd" id="1_rrhgb"]
+[ext_resource type="Texture2D" uid="uid://bul6jlp046fu2" path="res://Assets/Sprite/fire_unlock.png" id="2_lpai1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tghti"]
 
 [node name="shoot_unlock" type="Area2D" unique_id=1502662490]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_rrhgb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2115540023]
+texture = ExtResource("2_lpai1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84360126]
 shape = SubResource("RectangleShape2D_tghti")

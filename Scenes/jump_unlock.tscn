@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dwq50w8a64fbw"]
 
 [ext_resource type="Script" uid="uid://bcit731r1222" path="res://Scripts/jump_unlock.gd" id="1_n5swh"]
+[ext_resource type="Texture2D" uid="uid://phvweenyhrwt" path="res://Assets/Sprite/jump_item.png" id="2_f8q3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tghti"]
 
 [node name="jump_unlock" type="Area2D" unique_id=1320473691]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_n5swh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=202581010]
+texture = ExtResource("2_f8q3s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715712414]
 shape = SubResource("RectangleShape2D_tghti")

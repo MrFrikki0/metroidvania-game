@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://tgvve4hadwf1"]
 
+[ext_resource type="Texture2D" uid="uid://bul6jlp046fu2" path="res://Assets/Sprite/fire_unlock.png" id="1_qdvrb"]
+[ext_resource type="Texture2D" uid="uid://phvweenyhrwt" path="res://Assets/Sprite/jump_item.png" id="2_nf4gj"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_xgxfi"]
 font_size = 25
 
@@ -35,3 +38,15 @@ offset_right = 90.0
 offset_bottom = 42.0
 text = "Health:"
 label_settings = SubResource("LabelSettings_wviqb")
+
+[node name="Fire_icon" type="Sprite2D" parent="." unique_id=1789860363]
+visible = false
+position = Vector2(25, 110)
+scale = Vector2(2, 2)
+texture = ExtResource("1_qdvrb")
+
+[node name="Jump_icon" type="Sprite2D" parent="." unique_id=873709661]
+visible = false
+position = Vector2(65, 110)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nf4gj")
