@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwq50w8a64fbw"]
 
 [ext_resource type="Script" uid="uid://bcit731r1222" path="res://Scripts/jump_unlock.gd" id="1_n5swh"]
-[ext_resource type="Texture2D" uid="uid://phvweenyhrwt" path="res://Assets/Sprite/jump_item.png" id="2_f8q3s"]
+[ext_resource type="Texture2D" uid="uid://phvweenyhrwt" path="res://Assets/Sprite/Items/jump_item.png" id="2_f8q3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tghti"]
 

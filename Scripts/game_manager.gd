@@ -6,7 +6,7 @@ var abi_shoot_fire: bool
 @onready var energy_text: Label = $"../GUI/UI/Energy"
 @onready var fire_icon: Sprite2D = $"../GUI/UI/Fire_icon"
 @onready var jump_icon: Sprite2D = $"../GUI/UI/Jump_icon"
-@onready var player: CharacterBody2D = $"../Player"
+@onready var player: CharacterBody2D = %Player
 
 func _process(delta: float) -> void:
 	jump_icon.visible = false

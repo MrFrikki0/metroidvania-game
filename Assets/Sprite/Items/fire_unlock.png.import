@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://phvweenyhrwt"
-path="res://.godot/imported/jump_item.png-b6dc4867e39d52aec3d6c254e90c9909.ctex"
+uid="uid://bul6jlp046fu2"
+path="res://.godot/imported/fire_unlock.png-4b3b06c73bb8d8cb09e0f4a9b2427631.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite/jump_item.png"
-dest_files=["res://.godot/imported/jump_item.png-b6dc4867e39d52aec3d6c254e90c9909.ctex"]
+source_file="res://Assets/Sprite/Items/fire_unlock.png"
+dest_files=["res://.godot/imported/fire_unlock.png-4b3b06c73bb8d8cb09e0f4a9b2427631.ctex"]
 
 [params]
 

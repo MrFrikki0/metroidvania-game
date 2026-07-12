@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://croskcw4flerl"]
 
 [ext_resource type="Script" uid="uid://cqxnpjy3yu6vj" path="res://Scripts/shoot_unlock.gd" id="1_rrhgb"]
-[ext_resource type="Texture2D" uid="uid://bul6jlp046fu2" path="res://Assets/Sprite/fire_unlock.png" id="2_lpai1"]
+[ext_resource type="Texture2D" uid="uid://bul6jlp046fu2" path="res://Assets/Sprite/Items/fire_unlock.png" id="2_lpai1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tghti"]
 

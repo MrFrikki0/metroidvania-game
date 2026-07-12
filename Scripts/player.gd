@@ -54,9 +54,10 @@ func _physics_process(delta: float) -> void:
 		else:
 			kill_zone.set_monitoring(false)
 		
-		if Input.is_action_just_pressed("attack_2") and attacking == false and can_attack_2 and game_manager.abi_shoot_fire:
+		if Input.is_action_just_pressed("attack_2") and attacking == false and can_attack_2 and game_manager.abi_shoot_fire and energy > 0:
 			attacking = true
 			can_attack_2 = false
+			energy -= 1
 			print("press fire")
 			attack_2_timer.start()
 			if animated_sprite.flip_h == false:
@@ -65,7 +66,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				print("left :", str(shoot_left.global_position) , str(shoot_left.global_rotation))
 				fire(shoot_left.global_position, shoot_left.global_rotation)
-		if Input.is_action_just_pressed("jump") and JUMP_COUNT < max_jump:
+		if Input.is_action_just_pressed("jump") and JUMP_COUNT < max_jump and not attacking:
 			velocity.y = JUMP_VELOCITY
 			animated_sprite.play("Jump")
 			jumping = true
@@ -82,9 +83,9 @@ func _physics_process(delta: float) -> void:
 		elif direction < 0:
 			animated_sprite.flip_h = true
 			attack_1.position.x = -32
-		if attacking:
-			return
-		if not jumping:
+
+			
+		if not jumping and is_on_floor() and not attacking:
 			if direction == 0:
 				animated_sprite.play("Idle")
 			else:
@@ -96,7 +97,6 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			
 	elif health <= 0:
-		print("dead")
 		Engine.time_scale = 0.5
 		animated_sprite.play("Dead")
 		
@@ -133,11 +133,17 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "Jump":
 		jumping = false
 	if animated_sprite.animation == "Attack_2":
+		jumping = false
 		attacking = false
 		can_attack_1 = true
 		
-func add_energyPlayer():
-	energy += 1
+func add_energyPlayer(add_energy: int):
+	if max_energy <= energy + add_energy:
+		print("max add")
+		energy = max_energy
+	else:
+		print("add")
+		energy += add_energy
 
 
 func _on_attack_2_timer_timeout() -> void:
