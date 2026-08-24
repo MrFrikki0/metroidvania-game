@@ -22,8 +22,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = true
 	position.x += direction * SPEED * delta
 	if health <= 0:
-		drop()
-		drop()
+		drop(2)
 		queue_free()
 	
 func getting_hit(hit: int):
@@ -33,7 +32,8 @@ func getting_hit(hit: int):
 	else:
 		health -= hit
 		
-func drop():
-	var new_energy = energy_path.instantiate()
-	new_energy.global_position = slime.global_position
-	level.add_child(new_energy)
+func drop(count: int):
+	for n in count:
+		var new_energy = energy_path.instantiate()
+		new_energy.global_position = slime.global_position
+		level.add_child(new_energy)

@@ -19,7 +19,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="slime" type="RigidBody2D" unique_id=347372849]
+[node name="Slime" type="RigidBody2D" unique_id=347372849]
 collision_layer = 16
 script = ExtResource("1_aiwxb")
 

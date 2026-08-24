@@ -144,7 +144,8 @@ func add_energyPlayer(add_energy: int):
 	else:
 		print("add")
 		energy += add_energy
-
+func unlock_sf():
+	game_manager.unlock_sf()
 
 func _on_attack_2_timer_timeout() -> void:
 	can_attack_2 = true

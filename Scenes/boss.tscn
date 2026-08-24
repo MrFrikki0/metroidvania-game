@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c774ji5clpm0b"]
 
-[ext_resource type="Script" uid="uid://dog5akk44i550" path="res://Scenes/boss.gd" id="1_n725y"]
+[ext_resource type="Script" uid="uid://dog5akk44i550" path="res://Scripts/boss.gd" id="1_n725y"]
 [ext_resource type="Texture2D" uid="uid://bk5k7tw6lcjwv" path="res://Assets/Sprite/Ememies/1 Centipede/Centipede_attack3.png" id="1_ukjjc"]
 [ext_resource type="Texture2D" uid="uid://y3s7jwn7a8pc" path="res://Assets/Sprite/Ememies/1 Centipede/Centipede_idle.png" id="2_n725y"]
 [ext_resource type="Texture2D" uid="uid://hjnyakhq0o0b" path="res://Assets/Sprite/Ememies/1 Centipede/Centipede_walk.png" id="3_mh6p8"]
@@ -86,8 +86,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6xjeg")
 }],
-"loop": 1,
-"name": &"attack",
+"loop": 0,
+"name": &"Attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -104,7 +104,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ursto")
 }],
 "loop": 1,
-"name": &"idle",
+"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -121,7 +121,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ewv5o")
 }],
 "loop": 1,
-"name": &"move",
+"name": &"Move",
 "speed": 5.0
 }]
 
@@ -130,8 +130,9 @@ radius = 14.0
 height = 48.0
 
 [node name="Boss" type="RigidBody2D" unique_id=673534967]
+collision_layer = 16
 script = ExtResource("1_n725y")
-health = 100
+health = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=552400865]
 position = Vector2(0, 18.5)
@@ -139,8 +140,7 @@ shape = SubResource("RectangleShape2D_ihdna")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1993694984]
 sprite_frames = SubResource("SpriteFrames_rmoc2")
-animation = &"idle"
-frame_progress = 0.81039995
+animation = &"Attack"
 
 [node name="KillZone" parent="." unique_id=250391924 instance=ExtResource("4_qtle2")]
 
@@ -152,7 +152,23 @@ shape = SubResource("CapsuleShape2D_tghti")
 [node name="RayCast right" type="RayCast2D" parent="." unique_id=22286039]
 position = Vector2(0, 19)
 rotation = -1.5707964
+target_position = Vector2(0, 30)
 
 [node name="RayCast left" type="RayCast2D" parent="." unique_id=328372399]
 position = Vector2(0, 19)
 rotation = 1.5707964
+target_position = Vector2(0, 30)
+
+[node name="shoot_right" type="Node2D" parent="." unique_id=1584799890]
+position = Vector2(30, 20)
+
+[node name="shoot_left" type="Node2D" parent="." unique_id=167446591]
+position = Vector2(-30, 20)
+rotation = 3.1415927
+
+[node name="State_timer" type="Timer" parent="." unique_id=918781668]
+
+[node name="Attack_timer" type="Timer" parent="." unique_id=1925269451]
+
+[connection signal="timeout" from="State_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Attack_timer" to="." method="_on_attack_timer_timeout"]
