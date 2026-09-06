@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dbjwt80l86m6u"]
+
+[ext_resource type="Script" uid="uid://c7uosbvtk4qjd" path="res://Scripts/wood_wall.gd" id="1_ajjiw"]
+[ext_resource type="Texture2D" uid="uid://cwotyyoowlg6q" path="res://Assets/Sprite/wood_wall.png" id="2_102ek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tghti"]
+size = Vector2(31, 103)
+
+[node name="Wood_wall" type="StaticBody2D" unique_id=1659014722]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_ajjiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=428549711]
+scale = Vector2(0.6, 0.5175)
+texture = ExtResource("2_102ek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286666610]
+shape = SubResource("RectangleShape2D_tghti")

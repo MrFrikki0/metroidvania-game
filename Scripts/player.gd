@@ -114,7 +114,10 @@ func getting_hit(hit: int):
 		health = 0
 	else:
 		health -= hit
-		
+	animated_sprite.modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	animated_sprite.modulate = Color.WHITE
+	
 func fire(bulletPos,bulletRot) -> void:
 	print("bullet start")
 	var new_bullet = bullet_path.instantiate()

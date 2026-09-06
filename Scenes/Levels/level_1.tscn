@@ -3,13 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://nchkkvvohg75" path="res://Scenes/player.tscn" id="1_3mqfk"]
 [ext_resource type="Script" uid="uid://bd8j1451814it" path="res://Scripts/game_manager.gd" id="1_xgxfi"]
 [ext_resource type="Texture2D" uid="uid://b320ejpbdt6on" path="res://Assets/Tilesets/craftpix-net-115897-free-exclusion-zone-tileset-pixel-art/Tileset.png" id="2_iixi8"]
-[ext_resource type="PackedScene" uid="uid://bhwoh4xqxjmmw" path="res://Scenes/energy.tscn" id="3_cyadu"]
 [ext_resource type="PackedScene" uid="uid://gfrecmyaao4l" path="res://Scenes/kill_zone.tscn" id="4_iixi8"]
 [ext_resource type="PackedScene" uid="uid://t6c425p7nnqe" path="res://Scenes/slime.tscn" id="5_cyadu"]
 [ext_resource type="PackedScene" uid="uid://tgvve4hadwf1" path="res://Scenes/ui.tscn" id="7_5f3p6"]
 [ext_resource type="PackedScene" uid="uid://dwq50w8a64fbw" path="res://Scenes/jump_unlock.tscn" id="8_jv26f"]
-[ext_resource type="PackedScene" uid="uid://croskcw4flerl" path="res://Scenes/shoot_unlock.tscn" id="9_rb0md"]
+[ext_resource type="PackedScene" uid="uid://bhwoh4xqxjmmw" path="res://Scenes/energy.tscn" id="10_afv7b"]
 [ext_resource type="PackedScene" uid="uid://c774ji5clpm0b" path="res://Scenes/boss.tscn" id="10_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://croskcw4flerl" path="res://Scenes/shoot_unlock.tscn" id="11_7r2dd"]
+[ext_resource type="PackedScene" uid="uid://canm7a53m8ee1" path="res://Scenes/platform.tscn" id="11_hwvp3"]
+[ext_resource type="PackedScene" uid="uid://dbjwt80l86m6u" path="res://Scenes/wood_wall.tscn" id="12_k2mw1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfk5q"]
 texture = ExtResource("2_iixi8")
@@ -156,9 +158,30 @@ sources/1 = SubResource("TileSetAtlasSource_xfk5q")
 unique_name_in_owner = true
 script = ExtResource("1_xgxfi")
 
-[node name="map" type="TileMapLayer" parent="." unique_id=307670684]
-tile_map_data = PackedByteArray("AAD//wEAAQABAAAAAAAAAAEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAAAAAADAAEAAQACAAAAAAAEAAEAAQACAAAAAAAFAAEAAQADAAAAAAD+/wEAAQAAAAQAAAAFAAIAAQAAAAQAAAAGAAIAAQAFAAEAAAAHAAIAAQAFAAEAAAAIAAIAAQAHAAEAAAAGAAEAAQAEAAAAAAAHAAEAAQAFAAAAAAAIAAEAAQAGAAAAAAALAAIAAQAIAAAAAAAOAAIAAQAIAAAAAAALAAMAAQAIAAEAAAALAAQAAQAIAAEAAAAOAAMAAQAIAAEAAAAOAAQAAQAIAAEAAAAIAAMAAQADAAEAAAAIAAQAAQADAAEAAAARAAIAAQAAAAAAAAARAAMAAQAAAAEAAAARAAQAAQAAAAEAAAASAAIAAQABAAAAAAATAAIAAQABAAAAAAAUAAIAAQABAAAAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQADAAMAAAAYAAIAAQAFAAEAAAAZAAIAAQAFAAEAAAAaAAIAAQAFAAEAAAAbAAIAAQAFAAEAAAAcAAIAAQAFAAEAAAAdAAIAAQAFAAEAAAAeAAIAAQAFAAEAAAAfAAIAAQAFAAEAAAAgAAIAAQAFAAEAAAAeAAEAAQAFAAAAAAAfAAEAAQAFAAAAAAAgAAEAAQAFAAAAAAD+/wAAAQADAAEAAAD+////AQADAAEAAAD+//7/AQADAAEAAAD+//3/AQADAAEAAAD+//z/AQADAAEAAAAhAAIAAQABAAQAAAAhAAEAAQAAAAEAAAAhAAAAAQAAAAAAAAAiAAAAAQAFAAEAAAAjAAAAAQAFAAEAAAAkAAAAAQAFAAEAAAAiAP//AQAFAAAAAAAjAP//AQAGAAAAAAAkAP//AQAHAAAAAAAXAAEAAQAIAAAAAAAYAAEAAQAEAAAAAAAZAAEAAQAEAAAAAAAaAAEAAQAFAAAAAAAbAAEAAQAHAAAAAAAcAAEAAQAGAAAAAAAdAAEAAQAEAAAAAAAlAAAAAQABAAQAAAAlAP//AQAAAAEAAAAlAP7/AQAAAAEAAAAlAP3/AQAAAAEAAAAlAPz/AQAAAAAAAAAmAPz/AQABAAAAAAAnAPz/AQABAAQAAAAnAPv/AQAAAAEAAAAnAPr/AQAAAAEAAAAnAPn/AQAAAAAAAAAoAPn/AQABAAAAAAApAPn/AQABAAAAAAAqAPn/AQABAAQAAAAqAPj/AQAAAAEAAAAqAPf/AQAAAAEAAAAqAPb/AQAAAAAAAAArAPb/AQABAAAAAAAsAPb/AQABAAAAAAAtAPX/AQAIAAEAAAAtAPT/AQAIAAEAAAAtAPP/AQAIAAEAAAAtAPb/AQADAAMAAAAuAPb/AQAFAAEAAAAvAPb/AQAGAAEAAAAwAPb/AQAGAAEAAAAxAPb/AQAGAAEAAAAyAPb/AQAGAAEAAAAzAPb/AQAFAAEAAAA0APb/AQAFAAEAAAA1APb/AQAFAAEAAAA2APb/AQAFAAEAAAA3APb/AQAFAAEAAAA4APb/AQABAAQAAAA4APX/AQAAAAEAAAA4APT/AQAAAAEAAAA4APP/AQAAAAEAAAA4APL/AQAAAAEAAAAwAPP/AQAFAAEAAAAxAPP/AQAFAAEAAAAyAPP/AQAFAAEAAAAzAPP/AQAFAAEAAAA0APP/AQAFAAEAAAA1APP/AQAFAAEAAAA=")
+[node name="all of map" type="Node" parent="." unique_id=215812889]
+
+[node name="Platform" parent="all of map" unique_id=841017760 instance=ExtResource("11_hwvp3")]
+position = Vector2(1536, -384)
+
+[node name="Platform2" parent="all of map" unique_id=270330408 instance=ExtResource("11_hwvp3")]
+position = Vector2(1728, -384)
+
+[node name="Platform3" parent="all of map" unique_id=1741592646 instance=ExtResource("11_hwvp3")]
+position = Vector2(1416, -360)
+
+[node name="Platform4" parent="all of map" unique_id=1648431326 instance=ExtResource("11_hwvp3")]
+position = Vector2(1304, -272)
+
+[node name="map" type="TileMapLayer" parent="all of map" unique_id=307670684]
+tile_map_data = PackedByteArray("AAD//wEAAQABAAAAAAAAAAEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAAAAAADAAEAAQACAAAAAAAEAAEAAQACAAAAAAAFAAEAAQADAAAAAAD+/wEAAQAAAAQAAAAFAAIAAQAAAAQAAAAGAAIAAQAFAAEAAAAHAAIAAQAFAAEAAAAIAAIAAQAHAAEAAAAGAAEAAQAEAAAAAAAHAAEAAQAFAAAAAAAIAAEAAQAGAAAAAAALAAIAAQAIAAAAAAAOAAIAAQAIAAAAAAALAAMAAQAIAAEAAAALAAQAAQAIAAEAAAAOAAMAAQAIAAEAAAAOAAQAAQAIAAEAAAAIAAMAAQADAAEAAAAIAAQAAQADAAEAAAARAAIAAQAAAAAAAAARAAMAAQAAAAEAAAARAAQAAQAAAAEAAAASAAIAAQABAAAAAAATAAIAAQABAAAAAAAUAAIAAQABAAAAAAAVAAIAAQABAAAAAAAWAAIAAQABAAAAAAAXAAIAAQADAAMAAAAYAAIAAQAFAAEAAAAZAAIAAQAFAAEAAAAaAAIAAQAFAAEAAAAbAAIAAQAFAAEAAAAcAAIAAQAFAAEAAAAdAAIAAQAFAAEAAAAeAAIAAQAFAAEAAAAfAAIAAQAFAAEAAAAgAAIAAQAFAAEAAAAeAAEAAQAFAAAAAAAfAAEAAQAFAAAAAAAgAAEAAQAFAAAAAAD+/wAAAQADAAEAAAD+////AQADAAEAAAD+//7/AQADAAEAAAD+//3/AQADAAEAAAD+//z/AQADAAEAAAAhAAIAAQABAAQAAAAhAAEAAQAAAAEAAAAhAAAAAQAAAAAAAAAiAAAAAQAFAAEAAAAjAAAAAQAFAAEAAAAkAAAAAQAFAAEAAAAiAP//AQAFAAAAAAAjAP//AQAGAAAAAAAkAP//AQAHAAAAAAAXAAEAAQAIAAAAAAAYAAEAAQAEAAAAAAAZAAEAAQAEAAAAAAAaAAEAAQAFAAAAAAAbAAEAAQAHAAAAAAAcAAEAAQAGAAAAAAAdAAEAAQAEAAAAAAAlAAAAAQABAAQAAAAlAP//AQAAAAEAAAAlAP7/AQAAAAEAAAAlAP3/AQAAAAEAAAAlAPz/AQAAAAAAAAAmAPz/AQABAAAAAAAnAPz/AQABAAQAAAAnAPv/AQAAAAEAAAAnAPr/AQAAAAEAAAAnAPn/AQAAAAAAAAAoAPn/AQABAAAAAAApAPn/AQABAAAAAAAqAPn/AQABAAQAAAAqAPj/AQAAAAEAAAAqAPf/AQAAAAEAAAAqAPb/AQAAAAAAAAArAPb/AQABAAAAAAAsAPb/AQABAAAAAAAtAPX/AQAIAAEAAAAtAPT/AQAIAAEAAAAtAPP/AQAIAAEAAAAtAPb/AQADAAMAAAAuAPb/AQAFAAEAAAAvAPb/AQAGAAEAAAAwAPb/AQAGAAEAAAAxAPb/AQAGAAEAAAAyAPb/AQAGAAEAAAAzAPb/AQAFAAEAAAA0APb/AQAFAAEAAAA1APb/AQAFAAEAAAA2APb/AQAFAAEAAAA3APb/AQAFAAEAAAA4APb/AQABAAQAAAA4APX/AQAAAAEAAAA4APT/AQAAAAEAAAA4APP/AQAAAAEAAAA4APL/AQAAAAEAAAAxAPP/AQAEAAIAAAAyAPP/AQAFAAIAAAAzAPP/AQAFAAIAAAA0APP/AQAHAAIAAAA=")
 tile_set = SubResource("TileSet_7p6j4")
+
+[node name="KillZone" parent="all of map" unique_id=250391924 instance=ExtResource("4_iixi8")]
+position = Vector2(418, 218)
+hit = 9999
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="all of map/KillZone" unique_id=526225144]
+shape = SubResource("WorldBoundaryShape2D_cyadu")
 
 [node name="Player" parent="." unique_id=1434044922 instance=ExtResource("1_3mqfk")]
 unique_name_in_owner = true
@@ -169,28 +192,24 @@ zoom = Vector2(2, 2)
 limit_bottom = 150
 limit_smoothed = true
 
-[node name="Energy" parent="." unique_id=24894267 instance=ExtResource("3_cyadu")]
-position = Vector2(648, 26)
-
-[node name="KillZone" parent="." unique_id=250391924 instance=ExtResource("4_iixi8")]
-position = Vector2(418, 218)
-hit = 9999
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=526225144]
-shape = SubResource("WorldBoundaryShape2D_cyadu")
+[node name="jump_unlock" parent="." unique_id=1320473691 instance=ExtResource("8_jv26f")]
+position = Vector2(1131, -26)
 
 [node name="Slime" parent="." unique_id=98664592 instance=ExtResource("5_cyadu")]
 position = Vector2(804, 49)
+
+[node name="Boss" parent="." unique_id=673534967 instance=ExtResource("10_u5ghp")]
+position = Vector2(1675, -357)
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=695939449]
 
 [node name="UI" parent="GUI" unique_id=765963665 instance=ExtResource("7_5f3p6")]
 
-[node name="jump_unlock" parent="." unique_id=1320473691 instance=ExtResource("8_jv26f")]
-position = Vector2(1131, -26)
+[node name="Energy" parent="." unique_id=24894267 instance=ExtResource("10_afv7b")]
+position = Vector2(1600, -456)
 
-[node name="shoot_unlock" parent="." unique_id=1502662490 instance=ExtResource("9_rb0md")]
-position = Vector2(1323, -249)
+[node name="shoot_unlock" parent="." unique_id=1502662490 instance=ExtResource("11_7r2dd")]
+position = Vector2(1648, -456)
 
-[node name="Boss" parent="." unique_id=673534967 instance=ExtResource("10_u5ghp")]
-position = Vector2(1675, -357)
+[node name="Wood_wall" parent="." unique_id=1659014722 instance=ExtResource("12_k2mw1")]
+position = Vector2(1808, -520)

@@ -31,7 +31,11 @@ func getting_hit(hit: int):
 		health = 0
 	else:
 		health -= hit
-		
+	
+	animated_sprite_2d.modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	animated_sprite_2d.modulate = Color.WHITE
+
 func drop(count: int):
 	for n in count:
 		var new_energy = energy_path.instantiate()

@@ -11,3 +11,5 @@ func _on_body_entered(body: Node2D) -> void:
 		body.getting_hit(hit)
 	if body.get_name() == "Boss":
 		body.getting_hit(hit)
+	if body.get_name() == "Wood_wall":
+		body.break_wall()

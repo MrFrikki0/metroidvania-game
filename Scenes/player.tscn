@@ -390,6 +390,7 @@ animations = [{
 size = Vector2(62, 54)
 
 [node name="Player" type="CharacterBody2D" unique_id=1434044922]
+z_index = 5
 collision_layer = 2
 slide_on_ceiling = false
 floor_constant_speed = true

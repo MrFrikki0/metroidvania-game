@@ -22,7 +22,7 @@ rect = Rect2(0, 0, 20, 46)
 
 [node name="KillZone" parent="." unique_id=250391924 instance=ExtResource("3_ycag2")]
 collision_layer = 4
-collision_mask = 16
+collision_mask = 81
 hit = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1088902592]
