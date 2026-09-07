@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dl1wsq4r3wsmu"]
+
+[ext_resource type="Script" uid="uid://wgkk0nyfxjr8" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+
+[node name="Pause_menu" type="Control" unique_id=1605197996]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k0w1u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1051266505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 0.11764706)
+
+[node name="Resume" type="Button" parent="." unique_id=783023803]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -42.0
+offset_right = 92.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+text = "Resume"
+
+[node name="Exit" type="Button" parent="." unique_id=1385282192]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 107.0
+offset_right = 92.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Resume")
+text = "Exit to Main-Menu"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
