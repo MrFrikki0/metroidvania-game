@@ -2,7 +2,7 @@ extends Node2D
 
 const SPEED = 60
 var direction: int = 1
-var health: int = 20
+var health: int = 10
 var energy_path = preload("uid://cs2ery6egholb")
 
 @onready var ray_cast_right: RayCast2D = $"RayCast right"

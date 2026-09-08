@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://btpvxytgmr387"]
+
+[ext_resource type="Texture2D" uid="uid://cwllqu831pgjo" path="res://Assets/Sprite/block_wall.png" id="1_x003t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tghti"]
+size = Vector2(31, 109)
+
+[node name="Block_wall" type="StaticBody2D" unique_id=125050373]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=692354683]
+scale = Vector2(0.62, 0.545)
+texture = ExtResource("1_x003t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=153070414]
+shape = SubResource("RectangleShape2D_tghti")

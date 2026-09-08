@@ -19,6 +19,7 @@ var shoot_unlock_path = preload("uid://croskcw4flerl")
 @onready var shoot_left: Node2D = $shoot_left
 @onready var timer: Timer = $State_timer
 @onready var attack_timer: Timer = $Attack_timer
+@onready var boss_manager: Area2D = $"../all of map/Boss_Manager"
 @onready var player: CharacterBody2D = %Player
 @onready var slime: RigidBody2D = $"."
 @onready var level = $".."
@@ -26,6 +27,7 @@ var shoot_unlock_path = preload("uid://croskcw4flerl")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	boss_state = 0
+	animated_sprite_2d.flip_h = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -91,6 +93,7 @@ func _physics_process(delta: float) -> void:
 	
 	if health <= 0:
 		drop(1)
+		boss_manager.boss_over()
 		queue_free()
 		
 	

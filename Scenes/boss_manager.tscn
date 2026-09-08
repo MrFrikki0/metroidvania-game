@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bve6gon855tim"]
+
+[ext_resource type="Script" uid="uid://be7nh77lu5urr" path="res://Scripts/boss_manager.gd" id="1_mfn4k"]
+
+[node name="Boss_Manager" type="Area2D" unique_id=1415074697]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mfn4k")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
